@@ -38,6 +38,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -121,7 +122,6 @@
               ]
             },
             "id": "c6242707-0fe8-4f55-8123-33626cf2eada",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "Usuarios",
@@ -186,6 +186,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -269,7 +270,6 @@
               ]
             },
             "id": "5cb7f2d8-2239-4d29-839d-f897d25d5a25",
-            "zIndex": 2,
             "data": {
               "type": "tm.Process",
               "name": "Controlador\nWEB",
@@ -354,6 +354,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -437,7 +438,6 @@
               ]
             },
             "id": "06e37976-50da-42aa-afe1-d14a65c2eb46",
-            "zIndex": 3,
             "data": {
               "type": "tm.Process",
               "name": "Proceso de\nlogin",
@@ -514,6 +514,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -597,7 +598,6 @@
               ]
             },
             "id": "7028f4b8-f3c7-4407-a00b-39ed425c3240",
-            "zIndex": 4,
             "data": {
               "type": "tm.Store",
               "name": "Base de datos",
@@ -673,6 +673,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 5,
             "ports": {
               "groups": {
                 "top": {
@@ -756,7 +757,6 @@
               ]
             },
             "id": "9eff4b48-0542-4206-a266-225ea2981d26",
-            "zIndex": 5,
             "data": {
               "type": "tm.Store",
               "name": "Paginas web \nen disco",
@@ -794,6 +794,8 @@
             },
             "tools": {
               "items": [
+                "boundary",
+                "button-remove",
                 "boundary",
                 "button-remove"
               ],
