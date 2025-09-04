@@ -179,8 +179,8 @@
                 "text": "Controlador\nWEB"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -277,12 +277,60 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "203f9035-c24e-49bb-8e26-4ffc63094301",
+                  "title": "Troyanos",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Un programa se hace pasar por software legitimo.",
+                  "mitigation": "Validación de software y librerías (firmas digitales).\nControl de integridad en binarios.\nMonitoreo de comportamiento sospechoso.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": "7"
+                },
+                {
+                  "id": "c733f1b1-a747-4768-b3fd-631762aa9d66",
+                  "title": "Buffer Overflow",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "Corrupción de memoria al procesar datos maliciosos.",
+                  "mitigation": "Uso de lenguajes seguros (Java, C#, Rust).\nEn C/C++: ASLR, DEP, stack canaries.\nValidación estricta de entradas.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": "9"
+                },
+                {
+                  "id": "ea31fdaf-9a4f-4898-945d-2cb5a7225053",
+                  "title": "Fingerprinting",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "El atacante recolecta datos del sistema para explotar vulnerabilidades.",
+                  "mitigation": "Respuestas de error genéricas (no revelar versión de software).\nOcultar banners de servidor (Apache, Nginx, etc.).\nWAF para filtrar escaneo de reconocimiento.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": "6"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -299,8 +347,8 @@
                 "text": "Proceso de\nlogin"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -397,12 +445,47 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "9ddf4405-8c7c-4471-9dce-9bc8daaec1eb",
+                  "title": "Inyección SQL",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Alteración de la base de datos atraves de consultas SQL.",
+                  "mitigation": "Consultas parametrizadas/preparadas.\nUso de ORM seguro.\nPrincipio de menor privilegio en la cuenta de BD.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": "7"
+                },
+                {
+                  "id": "fb91eb88-99e9-4c58-bcdb-f41cbb8e6c37",
+                  "title": "Errores Zero-day",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Information disclosure",
+                  "description": "Mensajes reveladores de errores del sistema o información sensible.",
+                  "mitigation": "Manejo centralizado de excepciones.\nNo mostrar detalles técnicos al usuario.\nActualización constante de parches.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": "10"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -419,11 +502,13 @@
                 "text": "Base de datos"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -520,13 +605,53 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "485ef017-24b5-40ab-9259-05d482fd3a90",
+                  "title": "Ransomware",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "Cifrar oa alterar la inforamcion de la base de datos para pedir rescate usualmente.",
+                  "mitigation": "Backups cifrados y fuera de línea.\nSegmentación de red y EDR.\nParcheo y actualización de sistemas.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": "10"
+                },
+                {
+                  "id": "7b848182-1cb9-4547-9313-066443e9fedb",
+                  "title": "DNS Tunneling",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Sacar valores de la base de datos a través de DNS.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": "8"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 2,
+                "denialOfService": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -697,57 +822,6 @@
               "cell": "5cb7f2d8-2239-4d29-839d-f897d25d5a25",
               "port": "d67021b5-7bea-44ed-b515-177105cc4623"
             }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Web response",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Web response"
-            ],
-            "id": "00aecad3-65ff-433d-9f1a-5098e93137a0",
-            "source": {
-              "x": -13450,
-              "y": -2810
-            },
-            "target": {
-              "cell": "c6242707-0fe8-4f55-8123-33626cf2eada",
-              "port": "45256a1f-3279-4118-aedb-9d66079cbff4"
-            },
-            "vertices": [
-              {
-                "x": -13610,
-                "y": -2860
-              }
-            ]
           },
           {
             "shape": "trust-boundary-curve",
@@ -1086,23 +1160,84 @@
                 "x": -13620,
                 "y": -2680
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Web response",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "e3a490c8-4263-4984-9684-e1fa94d32fcf",
+                  "title": "Eavesdropping",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Un atacante escucha por la red y roba informacion en transito.",
+                  "mitigation": "Cifrado extremo a extremo (TLS/SSL).\nVPN en redes inseguras.\nDeshabilitar protocolos inseguros (HTTP plano, Telnet, etc.).",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": "7"
+                }
               ],
-              "name": null
-            }
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Web response"
+            ],
+            "id": "00aecad3-65ff-433d-9f1a-5098e93137a0",
+            "source": {
+              "x": -13450,
+              "y": -2810
+            },
+            "target": {
+              "cell": "c6242707-0fe8-4f55-8123-33626cf2eada",
+              "port": "45256a1f-3279-4118-aedb-9d66079cbff4"
+            },
+            "vertices": [
+              {
+                "x": -13610,
+                "y": -2860
+              }
+            ]
           }
         ]
       }
     ],
     "diagramTop": 1,
     "reviewer": "Guillermo Vera",
-    "threatTop": 3
+    "threatTop": 11
   }
 }
