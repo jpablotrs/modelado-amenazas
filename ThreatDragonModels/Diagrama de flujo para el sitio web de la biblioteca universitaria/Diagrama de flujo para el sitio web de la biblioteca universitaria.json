@@ -1413,13 +1413,6 @@
                 "spoofing": 2,
                 "repudiation": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -1552,6 +1545,19 @@
                   "new": false,
                   "number": 13,
                   "score": ""
+                },
+                {
+                  "id": "9b7b0c5b-f576-40ae-aa16-353b9eb3dead",
+                  "title": "Escalado de privilegios",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Un usuario logra acceder a paginas o usuarios de alto privilegios debido a la configuracion.",
+                  "mitigation": "usar autenticación de dos pasos o datos biometricos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 18,
+                  "score": "6"
                 }
               ],
               "threatFrequency": {
@@ -1560,8 +1566,15 @@
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 1,
-                "elevationOfPrivilege": 0
+                "elevationOfPrivilege": 1
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -2123,57 +2136,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Lee web\napp config",
-              "description": "",
-              "outOfScope": true,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Lee web\napp config"
-            ],
-            "id": "b127db47-1988-4751-acc7-806193467d79",
-            "source": {
-              "x": 580,
-              "y": 360
-            },
-            "target": {
-              "cell": "df5bd422-3f2b-4194-a8f8-15f39d3a5bfa",
-              "port": "3d433a25-46af-4e12-9fcb-a7ca05f36ef5"
-            },
-            "vertices": [
-              {
-                "x": 510,
-                "y": 330
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": "4 3"
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Páginas",
               "description": "",
               "outOfScope": true,
@@ -2444,57 +2406,6 @@
             "labels": [
               "Web Request"
             ],
-            "id": "3d063c81-6a59-475a-9f8c-abeb62c0bfff",
-            "source": {
-              "cell": "12473bd8-717b-4dce-9b54-47f6847e7f04",
-              "port": "b1a13f76-7d5f-47f0-bf23-6013f2909808"
-            },
-            "target": {
-              "cell": "df5bd422-3f2b-4194-a8f8-15f39d3a5bfa",
-              "port": "7e9556c3-2a32-402c-b910-79297faa47b6"
-            },
-            "vertices": [
-              {
-                "x": 420,
-                "y": 170
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Web Request",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Web Request"
-            ],
             "id": "58a4b318-b9a6-4d0a-bc44-973fe84dd1d1",
             "source": {
               "cell": "b2deeddb-6ddc-4b3d-b5d1-22a5fd0f8ad8",
@@ -2546,12 +2457,134 @@
                 "y": 90
               }
             ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Web Request",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "c486f97e-6f94-4d61-9cd2-4875fe5d6ba9",
+                  "title": "Man in the middle",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Un usuario mal intencionado se posiciona en medio del remitente y destinatario para poder obtener la información que se este comunicando por la red.",
+                  "mitigation": "Utilizar protocolos seguros como https que usan encriptación, usar SSL o TLS para poder hacer llegar la información al remitente y al destinatario correcto.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 17,
+                  "score": "7"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Web Request"
+            ],
+            "id": "3d063c81-6a59-475a-9f8c-abeb62c0bfff",
+            "source": {
+              "cell": "12473bd8-717b-4dce-9b54-47f6847e7f04",
+              "port": "b1a13f76-7d5f-47f0-bf23-6013f2909808"
+            },
+            "target": {
+              "cell": "df5bd422-3f2b-4194-a8f8-15f39d3a5bfa",
+              "port": "7e9556c3-2a32-402c-b910-79297faa47b6"
+            },
+            "vertices": [
+              {
+                "x": 420,
+                "y": 170
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Lee web\napp config",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Lee web\napp config"
+            ],
+            "id": "b127db47-1988-4751-acc7-806193467d79",
+            "source": {
+              "x": 580,
+              "y": 360
+            },
+            "target": {
+              "cell": "df5bd422-3f2b-4194-a8f8-15f39d3a5bfa",
+              "port": "3d433a25-46af-4e12-9fcb-a7ca05f36ef5"
+            },
+            "vertices": [
+              {
+                "x": 510,
+                "y": 330
+              }
+            ]
           }
         ]
       }
     ],
     "diagramTop": 2,
     "reviewer": "Guillermo Vera",
-    "threatTop": 16
+    "threatTop": 18
   }
 }
