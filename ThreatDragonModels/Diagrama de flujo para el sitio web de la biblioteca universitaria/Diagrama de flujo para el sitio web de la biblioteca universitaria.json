@@ -321,6 +321,19 @@
                   "new": false,
                   "number": 7,
                   "score": "6"
+                },
+                {
+                  "id": "24a93676-e008-45f3-a166-2b381445049c",
+                  "title": "Ataque de fuerza bruta",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Un usuario mal intencionado realiza un ataque de fuerza bruta para intentar ingresar a una cuenta de altos privilegios.",
+                  "mitigation": "Proxy y firewall para bloquear muchas peticiones.\nUtilizar autenticacion de dos pasos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 19,
+                  "score": "7"
                 }
               ],
               "threatFrequency": {
@@ -329,7 +342,7 @@
                 "repudiation": 0,
                 "informationDisclosure": 1,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 0
+                "elevationOfPrivilege": 1
               }
             }
           },
@@ -2585,6 +2598,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "Guillermo Vera",
-    "threatTop": 18
+    "threatTop": 19
   }
 }
