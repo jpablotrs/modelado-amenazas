@@ -1281,8 +1281,8 @@
                 "text": "Usuarios"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1379,9 +1379,47 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "aba86dd3-b8f4-462d-a292-836856559222",
+                  "title": "Phishing",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Un atacante le manda un correo a un usuario con credenciales haciendose pasar por su jefe, y le pide credenciales confidenciales.",
+                  "mitigation": "Tener politicas donde no se puedan pasar este tipo de credenciales por la red, o que se autentiquen.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": "4"
+                },
+                {
+                  "id": "49d39309-dfe4-4213-9cf3-6eeac13660ba",
+                  "title": "Ataque de desbordamiento de buffer",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Un atacante escribe dentro de un campo que no esta validado haciendo que se desborde y la información restante sobrescriba espacios ya utilizados, haciendo que se pierda la información.",
+                  "mitigation": "Validar todos los campos poniendoles un limite de caracteres.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": "8"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "repudiation": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1504,12 +1542,12 @@
               "threats": [
                 {
                   "id": "000379d9-6e9a-4528-9ad7-92894ce7df70",
-                  "title": "New STRIDE threat",
+                  "title": "DDOS ataque",
                   "status": "Open",
                   "severity": "TBD",
-                  "type": "Spoofing",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "type": "Denial of service",
+                  "description": "Una atacante malintencionado con un gran poder de computo hace que se manden varias solicitudes al sistema bibliotecario.",
+                  "mitigation": "Usar Proxys y firewalls para evitar solicitudes que no sean genuinas.\nUsar catchas minimo para el inicio de sesion.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 13,
@@ -1521,16 +1559,9 @@
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 0,
+                "denialOfService": 1,
                 "elevationOfPrivilege": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -1547,8 +1578,8 @@
                 "text": "Bibliotecario"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1645,9 +1676,27 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "48c7e2ce-1fe4-4a59-85a6-ad958678907b",
+                  "title": "Adware",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Spoofing",
+                  "description": " El bibliotecario sube un archivo que iba plagado de adware y ahora aparecen anuncios en los equipos de las personas que descagaron el mismo archivo.",
+                  "mitigation": "No descargar archivos de fuentes no confiables.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": "3"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 0
+              }
             }
           },
           {
@@ -2503,6 +2552,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "Guillermo Vera",
-    "threatTop": 13
+    "threatTop": 16
   }
 }
