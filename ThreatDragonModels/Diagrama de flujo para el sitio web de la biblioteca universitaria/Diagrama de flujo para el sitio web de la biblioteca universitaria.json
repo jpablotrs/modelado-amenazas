@@ -1288,6 +1288,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -1371,7 +1372,6 @@
               ]
             },
             "id": "12473bd8-717b-4dce-9b54-47f6847e7f04",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "Usuarios",
@@ -1398,13 +1398,14 @@
                 "text": "Sitio web\nbiblioteca"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -1488,7 +1489,6 @@
               ]
             },
             "id": "df5bd422-3f2b-4194-a8f8-15f39d3a5bfa",
-            "zIndex": 2,
             "data": {
               "type": "tm.Process",
               "name": "Sitio web\nbiblioteca",
@@ -1496,12 +1496,41 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "000379d9-6e9a-4528-9ad7-92894ce7df70",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1525,6 +1554,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -1608,7 +1638,6 @@
               ]
             },
             "id": "b2deeddb-6ddc-4b3d-b5d1-22a5fd0f8ad8",
-            "zIndex": 3,
             "data": {
               "type": "tm.Actor",
               "name": "Bibliotecario",
@@ -1645,6 +1674,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -1728,7 +1758,6 @@
               ]
             },
             "id": "34cac78d-6e35-490f-9409-8c7034acb57c",
-            "zIndex": 4,
             "data": {
               "type": "tm.Store",
               "name": "Páginas web\nen disco",
@@ -1769,6 +1798,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 5,
             "ports": {
               "groups": {
                 "top": {
@@ -1852,7 +1882,6 @@
               ]
             },
             "id": "667d8353-6912-4c51-8d6a-40b07a5e066d",
-            "zIndex": 5,
             "data": {
               "type": "tm.Store",
               "name": "Web Application Config",
@@ -1893,6 +1922,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 6,
             "ports": {
               "groups": {
                 "top": {
@@ -1976,7 +2006,6 @@
               ]
             },
             "id": "c20a4b0e-08e4-4b56-9db0-28acc27fe67e",
-            "zIndex": 6,
             "data": {
               "type": "tm.Store",
               "name": "Base de datos",
@@ -2474,6 +2503,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "Guillermo Vera",
-    "threatTop": 12
+    "threatTop": 13
   }
 }
