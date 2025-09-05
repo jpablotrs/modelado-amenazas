@@ -1581,13 +1581,6 @@
                 "denialOfService": 1,
                 "elevationOfPrivilege": 1
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -1987,11 +1980,13 @@
                 "text": "Base de datos"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -2088,13 +2083,40 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "15bcbfdf-d28e-49ed-9abe-1631874b67f4",
+                  "title": "Ransonware",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Denial of service",
+                  "description": "Un atacante logra cifrar información de la base de datos o incluso toda la base de datos, para pedir un rescate por los datos.",
+                  "mitigation": "Tener un respaldo de base de datos.\nPagar y solucionar el problema",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 24,
+                  "score": "8"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -2177,159 +2199,6 @@
               {
                 "x": 440,
                 "y": 320
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Queries",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Queries"
-            ],
-            "id": "5667fc58-b0ef-44c7-9a00-7ab9958075d8",
-            "source": {
-              "cell": "df5bd422-3f2b-4194-a8f8-15f39d3a5bfa",
-              "port": "ad36332d-9789-442d-857f-c4c6d9b4e911"
-            },
-            "target": {
-              "cell": "c20a4b0e-08e4-4b56-9db0-28acc27fe67e",
-              "port": "401936b2-7a20-47bb-9473-ef0a3408d8ac"
-            },
-            "vertices": [
-              {
-                "x": 640,
-                "y": 310
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Resultados\nWeb App Query",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Resultados\nWeb App Query"
-            ],
-            "id": "8449deb9-4a23-47cb-bca6-410339bc998b",
-            "source": {
-              "x": 870,
-              "y": 250
-            },
-            "target": {
-              "cell": "df5bd422-3f2b-4194-a8f8-15f39d3a5bfa",
-              "port": "ad36332d-9789-442d-857f-c4c6d9b4e911"
-            },
-            "vertices": [
-              {
-                "x": 690,
-                "y": 210
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Web Response",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Web Response"
-            ],
-            "id": "76862ef1-c86c-4a24-aebc-4d4fab4f410b",
-            "source": {
-              "cell": "df5bd422-3f2b-4194-a8f8-15f39d3a5bfa",
-              "port": "7e9556c3-2a32-402c-b910-79297faa47b6"
-            },
-            "target": {
-              "cell": "12473bd8-717b-4dce-9b54-47f6847e7f04",
-              "port": "b1a13f76-7d5f-47f0-bf23-6013f2909808"
-            },
-            "vertices": [
-              {
-                "x": 350,
-                "y": 200
               }
             ]
           },
@@ -2546,7 +2415,154 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Queries",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "06ac7a9a-b9a8-40dd-a737-c9f37d2f6f00",
+                  "title": "Consultas pesadas",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Un atacante realiza muchas consultas en un tiempo corto o consutlas que son costosas para el administrador de la base de datos lo que hace que se caiga la base de datos.",
+                  "mitigation": "Generar procedimientos almacenados ligeros.\nBloquear a usuarios con actividad no normal.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 20,
+                  "score": "3"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1
+              }
+            },
+            "labels": [
+              "Queries"
+            ],
+            "id": "5667fc58-b0ef-44c7-9a00-7ab9958075d8",
+            "source": {
+              "cell": "df5bd422-3f2b-4194-a8f8-15f39d3a5bfa",
+              "port": "ad36332d-9789-442d-857f-c4c6d9b4e911"
+            },
+            "target": {
+              "cell": "c20a4b0e-08e4-4b56-9db0-28acc27fe67e",
+              "port": "401936b2-7a20-47bb-9473-ef0a3408d8ac"
+            },
+            "vertices": [
+              {
+                "x": 640,
+                "y": 310
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Resultados\nWeb App Query",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "607b9322-25df-4495-8271-e191824ebbdb",
+                  "title": "Divulgación de información",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Cualquier usuario puede ver sus datos sensibles cuando visualizan su perfil, lo que podria causar que un tercero pueda ver dicha infromación.",
+                  "mitigation": "Hashear las contraseñas y datos personales que incluso el dueño no tendria que ver.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 21,
+                  "score": "3"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Resultados\nWeb App Query"
+            ],
+            "id": "8449deb9-4a23-47cb-bca6-410339bc998b",
+            "source": {
+              "x": 870,
+              "y": 250
+            },
+            "target": {
+              "cell": "df5bd422-3f2b-4194-a8f8-15f39d3a5bfa",
+              "port": "ad36332d-9789-442d-857f-c4c6d9b4e911"
+            },
+            "vertices": [
+              {
+                "x": 690,
+                "y": 210
+              },
+              {
+                "x": 600,
+                "y": 210
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -2567,12 +2583,31 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "10755f70-659e-4e6c-8025-ee6667e77dfa",
+                  "title": "Robo de archivos de config",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Information disclosure",
+                  "description": "Un usuario malintencionado roba los archivos de configuración del sistema donde se encuentran credenciales de APIs y variables de entorno.",
+                  "mitigation": "cifrar los archivos el acceso a los archivos de configuración",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 22,
+                  "score": "3"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Lee web\napp config"
@@ -2592,12 +2627,83 @@
                 "y": 330
               }
             ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Web Response",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "ba1cb6cd-af0b-493a-82a0-e5d414af3eed",
+                  "title": "Errores expuestos en log",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Information disclosure",
+                  "description": "El sistema provee información sensible del propio sistema es decir versiones del sistema, o arquitectura propia.",
+                  "mitigation": "Usar mensajes de log que sean genericos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 23,
+                  "score": "3"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Web Response"
+            ],
+            "id": "76862ef1-c86c-4a24-aebc-4d4fab4f410b",
+            "source": {
+              "cell": "df5bd422-3f2b-4194-a8f8-15f39d3a5bfa",
+              "port": "7e9556c3-2a32-402c-b910-79297faa47b6"
+            },
+            "target": {
+              "cell": "12473bd8-717b-4dce-9b54-47f6847e7f04",
+              "port": "b1a13f76-7d5f-47f0-bf23-6013f2909808"
+            },
+            "vertices": [
+              {
+                "x": 350,
+                "y": 200
+              }
+            ]
           }
         ]
       }
     ],
     "diagramTop": 2,
     "reviewer": "Guillermo Vera",
-    "threatTop": 19
+    "threatTop": 24
   }
 }
